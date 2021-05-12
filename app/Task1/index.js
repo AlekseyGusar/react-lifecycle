@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from 'axios';
 
 export default class Task1 extends Component {
     constructor(props) {
@@ -12,9 +11,8 @@ export default class Task1 extends Component {
     }
 
     componentDidMount() {
-      axios.get('http://localhost:3000/list')
+      fetch('http://localhost:3000/list', { method: 'GET'})
           .then(result => {
-              console.log(result);
               return this.setState({
                   loading: false,
                   list: [...result.data],
