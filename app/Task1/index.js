@@ -11,12 +11,17 @@ export default class Task1 extends Component {
     }
 
     componentDidMount() {
-      fetch('http://localhost:3000/list', { method: 'GET'})
-          .then(result => {
-              return this.setState({
+        fetch('http://localhost:3000/list', {
+            method: 'GET', headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(result => {
+              return result.json() 
+              .then(response => this.setState({
                   loading: false,
-                  list: [...result.data],
-              })
+                  list: response
+              }))
           });
     };
 
