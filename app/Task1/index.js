@@ -30,9 +30,9 @@ export default class Task1 extends Component {
         const listItems = list.map(item => {
             return (
                 <li key={item.id}>
-                    <div>id: {item.id}</div>
-                    <div>name: {item.name}</div>
-                    <div>note: {item.note}</div>
+                    <div>id - {item.id}</div>
+                    <div>name - {item.name}</div>
+                    <div>note - {item.note}</div>
                 </li>
             )
         })
